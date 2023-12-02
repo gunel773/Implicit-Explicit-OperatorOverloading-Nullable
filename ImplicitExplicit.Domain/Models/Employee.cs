@@ -8,6 +8,8 @@ namespace ImplicitExplicit.Domain.Models
     {
         public string Name { get; set; }
         public string Surname { get; set; }
+        private static int _id { get; set; }
+        public int ID { get; set; }
         public int Salary { get; set; }
         public DateTime Birthday { get; set; }
 
@@ -15,11 +17,13 @@ namespace ImplicitExplicit.Domain.Models
 
         public Employee()
         {
-
+            _id++;
+            ID=_id;
         }
 
         public Employee(string name, string surname, int salary, DateTime birthday)
         {
+
             Birthday = birthday;
             Name = name;
             Surname = surname;
